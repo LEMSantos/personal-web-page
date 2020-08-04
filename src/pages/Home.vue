@@ -62,6 +62,7 @@
             icon="fas fa-code"
             text-color="white"
             class="q-py-xs q-mr-md"
+            to="/portfolio"
             unelevated
             no-caps
           />
@@ -72,6 +73,7 @@
             icon="fas fa-file-alt"
             text-color="white"
             class="q-py-xs"
+            to="/resume"
             unelevated
             no-caps
           />
@@ -244,6 +246,7 @@
               icon="fas fa-blog"
               text-color="white"
               class="q-py-xs q-mr-md"
+              to="/blog"
               unelevated
               no-caps
             />
