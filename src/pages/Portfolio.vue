@@ -61,6 +61,25 @@
             </q-card-section>
           </q-card>
         </div>
+
+        <div
+          class="col-12"
+          :class="{
+            'flex flex-center': !$q.screen.gt.sm,
+          }"
+        >
+          <q-btn
+            type="a"
+            href="https://github.com/LEMSantos?tab=repositories"
+            target="_blank"
+            color="primary"
+            label="Ver mais projetos"
+            text-color="white"
+            class="q-py-xs q-mr-md"
+            unelevated
+            no-caps
+          />
+        </div>
       </div>
     </page-section>
   </q-page>
