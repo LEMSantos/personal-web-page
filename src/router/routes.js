@@ -15,6 +15,22 @@ const routes = [
     ],
   },
 
+  {
+    path: '/resume',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/Resume.vue') },
+    ],
+  },
+
+  {
+    path: '/blog',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/Blog.vue') },
+    ],
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   {
