@@ -1,0 +1,226 @@
+<template>
+  <q-layout :view="$q.screen.gt.sm ? 'hhh LpR fff': 'hhh LpR fFf'">
+    <q-header class="bg-main-page fira-code">
+      <q-toolbar
+        class="bg-main-page text-primary q-my-md"
+        :class="{
+          'page-left-padding page-right-padding': $q.screen.gt.sm,
+          'flex flex-center': !$q.screen.gt.sm,
+        }"
+      >
+        <div>
+          <div
+            class="typewriter text-h5"
+          >
+            LEMSantos
+          </div>
+        </div>
+
+        <q-space
+          v-if="$q.screen.gt.sm"
+        />
+
+        <q-btn-toggle
+          v-if="$q.screen.gt.sm"
+          v-model="atualPage"
+          flat
+          stretch
+          toggle-color="primary"
+          text-color="black"
+          class="text-weight-bold"
+          no-caps
+          :options="toolbarOptions"
+        />
+      </q-toolbar>
+    </q-header>
+
+    <q-drawer
+      v-if="$q.screen.gt.sm"
+      v-model="leftDrawerOpen"
+      show-if-above
+      :width="182"
+      class="bg-main-page"
+      content-class="bg-main-page"
+    >
+      <div
+        class="fit column justify-center items-center q-gutter-y-md bg-main-page"
+      >
+        <q-btn
+          v-for="(socialMedia, index) in socialMedias"
+          :key="index"
+          type="a"
+          target="_blank"
+          :href="socialMedia.link"
+          color="primary"
+          outline
+          round
+        >
+          <q-icon
+            :name="socialMedia.icon"
+            color="black"
+          />
+        </q-btn>
+      </div>
+    </q-drawer>
+
+    <q-page-container
+      :class="$q.screen.gt.sm ? 'page-right-padding' : 'q-px-md'"
+      class="bg-main-page"
+    >
+      <router-view />
+
+      <div class="flex flex-center q-my-xl">
+        <span
+          v-if="$q.screen.lt.md"
+          class="text-black op-50"
+        >
+          Made with ❤️ by Lucas Eliaquim
+        </span>
+      </div>
+    </q-page-container>
+
+    <q-footer
+      v-if="$q.screen.gt.sm"
+      class="fira-code"
+    >
+      <q-toolbar
+        class="q-py-lg flex flex-center"
+      >
+        <q-toolbar-title
+          shrink
+          class="q-my-md text-body2 text-weight-bold op-50"
+        >
+          Made with ❤️ by Lucas Eliaquim
+        </q-toolbar-title>
+      </q-toolbar>
+    </q-footer>
+
+    <q-footer
+      v-else
+      class="bg-transparent"
+    >
+      <q-tabs
+        v-model="atualPage"
+        indicator-color="transparent"
+        active-color="white"
+        class="bg-primary text-grey-5 tab-footer-radius"
+      >
+        <q-tab
+          v-for="(option, index) in toolbarOptions"
+          :key="index"
+          :name="option.value"
+          :icon="tabBarIcons[index]"
+          :label="option.label"
+          no-caps
+        />
+      </q-tabs>
+    </q-footer>
+  </q-layout>
+</template>
+
+<script>
+export default {
+  name: 'MainLayout',
+
+  data() {
+    return {
+      atualPage: '',
+      leftDrawerOpen: true,
+      toolbarOptions: [
+        {
+          label: 'Home',
+          value: '',
+        },
+        {
+          label: 'Portfólio',
+          value: 'portfolio',
+        },
+        {
+          label: 'Currículo',
+          value: 'resume',
+        },
+        {
+          label: 'Blog',
+          value: 'blog',
+        },
+      ],
+      tabBarIcons: [
+        'fas fa-home',
+        'fas fa-code',
+        'fas fa-file-alt',
+        'fas fa-blog',
+      ],
+      socialMedias: [
+        {
+          icon: 'fab fa-github-alt',
+          link: 'https://github.com/LEMSantos',
+        },
+        {
+          icon: 'fab fa-linkedin-in',
+          link: 'https://www.linkedin.com/in/lucas-eliaquim-1a7675181/',
+        },
+        {
+          icon: 'fab fa-twitter',
+          link: 'https://twitter.com/LEliaquim',
+        },
+        {
+          icon: 'fas fa-envelope',
+          link: 'mailto:lucas_m-santos@hotmail.com',
+        },
+      ],
+    };
+  },
+
+  watch: {
+    atualPage(newValue) {
+      this.$router.push(`/${newValue}`, () => {});
+    },
+
+    '$route.path': {
+      handler(newValue) {
+        this.atualPage = newValue.replace('/', '');
+      },
+
+      immediate: true,
+    },
+  },
+};
+</script>
+<style lang="scss" scoped>
+$pageMargin: 70px;
+
+.page-left-padding {
+  padding-left: $pageMargin;
+}
+
+.page-right-padding {
+  padding-right: $pageMargin;
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid #1976D2;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation: typing .75s steps(15, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #1976D2; }
+}
+
+.tab-footer-radius {
+  border-radius: 10px 10px 0px 0px;
+}
+
+.bg-main-page {
+  background-color: #f6f8fa;
+}
+</style>
