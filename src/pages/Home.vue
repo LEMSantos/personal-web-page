@@ -232,6 +232,7 @@
           v-for="(post, index) in latestBlogPosts"
           :key="index"
           v-bind="post"
+          :publish-date="post.created_at"
           :center-text="$q.screen.lt.sm"
           class="col-md-4 col-sm-6 col-xs-12"
         />
@@ -297,7 +298,7 @@ export default {
     this.loadingBlogPosts = true;
 
     this.getLatestBlogPosts()
-      .then((data) => {
+      .then(({ data }) => {
         this.latestBlogPosts = data;
       })
       .catch(() => {})
