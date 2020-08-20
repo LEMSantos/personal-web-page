@@ -22,7 +22,7 @@
 
     <div class="row justify-between">
       <q-btn
-        label="Read more"
+        label="Ler mais"
         color="primary"
         flat
         no-caps
@@ -30,7 +30,7 @@
       />
 
       <span class="op-50">
-        Published in {{ publishDate }}
+        Publicado em {{ publishDate | moment('DD/MM/YYYY') }}
       </span>
     </div>
   </div>
