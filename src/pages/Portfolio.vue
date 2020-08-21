@@ -19,13 +19,15 @@
         v-else
         class="row q-pt-xl q-col-gutter-xl items-stretch"
       >
-        <div
+        <a
           v-for="repo in repos"
           :key="repo.id"
-          class="col-md-6 col-xs-12"
+          class="col-md-6 col-xs-12 cursor-default"
+          :href="repo.html_url"
+          target="_blank"
         >
           <q-card
-            class="full-height"
+            class="full-height cursor-pointer text-black"
           >
             <q-card-section class="fit" horizontal>
               <q-img
@@ -60,7 +62,7 @@
               </q-card-section>
             </q-card-section>
           </q-card>
-        </div>
+        </a>
 
         <div
           class="col-12"
@@ -127,5 +129,17 @@ export default {
 <style lang="scss" scoped>
 .python-icon {
   color: #456E9C;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+a {
+  text-decoration: none;
 }
 </style>
