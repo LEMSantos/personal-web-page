@@ -1,6 +1,8 @@
 <template>
   <q-page>
-    <div class="row shadow-7 q-pa-sm-xl q-pa-md">
+    <div
+      class="row shadow-7 q-pa-md-xl q-pa-md"
+    >
       <div class="col q-pa-sm-md q-pa-sm column justify-center">
         <div
           class="text-h3 text-weight-bold text-primary"
@@ -67,7 +69,7 @@
 
       <q-separator class="q-my-md" />
 
-      <div class="col q-pa-md column q-gutter-y-md q-pr-xl">
+      <div class="col-sm col-12 q-pa-md column q-gutter-y-md q-pr-xl">
         <div
           class="resume-subtitle text-primary q-pl-md text-h6 text-weight-bold"
         >
@@ -105,8 +107,12 @@
             </div>
           </div>
 
-          <p>
-            JavaScript/Vue
+          <p class="text-justify">
+            Inicialmente atuei como Desenvolvedor Full Stack, trabalhando principalmente com
+            tecnologias como PHP e Laravel, Vue.js e BootstrapVue. Após alguns meses migrei para a
+            área de Ciencia de Dados e Business Intelligence onde trabalho com Algoritmos de Machine
+            Learning e Processamento de Linguagem Natural aplicados a dados relacionas a Atenção
+            Básica.
           </p>
         </div>
 
@@ -129,8 +135,11 @@
             </div>
           </div>
 
-          <p>
-            JavaScript/Vue
+          <p class="text-justify">
+            Pela Universidade Federal do Vale do São Francisco, participei de um projeto de ensino
+            como monitor de algoritmos e programação, mais especificamente relacionado a linguagem
+            C e a pseudolinguagem Portugol. O projeto tinha como objetivo apoiar as disciplinas de
+            Introdução à Programação e Introdução à Algoritmos.
           </p>
         </div>
       </div>
