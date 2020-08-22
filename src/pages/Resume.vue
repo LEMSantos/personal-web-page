@@ -261,6 +261,9 @@
           :class="{
             'q-mr-lg': index < socialMedias.length - 1,
           }"
+          type="a"
+          :href="social.link"
+          target="_blank"
           class="text-weight-light"
           dense
           flat
@@ -292,6 +295,9 @@
           :class="{
             'q-mr-lg': index < socialMedias.length - 1,
           }"
+          type="a"
+          :href="social.link"
+          target="_blank"
           dense
           unelevated
         />
