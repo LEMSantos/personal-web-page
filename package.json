@@ -14,7 +14,9 @@
     "axios": "^0.18.1",
     "core-js": "^3.6.5",
     "quasar": "^1.0.0",
-    "vue-moment": "^4.1.0"
+    "showdown-highlight": "^2.1.5",
+    "vue-moment": "^4.1.0",
+    "vue-showdown": "^2.4.1"
   },
   "devDependencies": {
     "@quasar/app": "^2.0.0",
