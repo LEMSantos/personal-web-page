@@ -28,6 +28,7 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/Blog.vue') },
+      { path: '/blog/:id/*', component: () => import('pages/BlogPost.vue') },
     ],
   },
 
