@@ -27,6 +27,8 @@
         flat
         no-caps
         padding="none"
+        :to="`/blog/${id}/${formatTitle(title)}`"
+        exact
       />
 
       <span class="op-50">
@@ -39,6 +41,10 @@
 <script>
 export default {
   props: {
+    id: {
+      type: Number,
+      required: true,
+    },
     title: {
       type: String,
       default: '',
@@ -58,6 +64,12 @@ export default {
     centerText: {
       type: Boolean,
       default: false,
+    },
+  },
+
+  methods: {
+    formatTitle(title) {
+      return title.split(' ').map((t) => t.toLowerCase()).join('-');
     },
   },
 };
