@@ -1,3 +1,5 @@
+@import 'github.markdown';
+
 // Fira Code
 @font-face {
     font-family: 'FiraCode';
@@ -125,4 +127,16 @@ body {
 
 .display-block {
     display: block;
+}
+
+.resume {
+    ul {
+        list-style: circle;
+        padding-left: 40px;
+        margin: 0;
+    }
+
+    li {
+        display: list-item;
+    }
 }
