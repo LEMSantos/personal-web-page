@@ -20,17 +20,22 @@
           v-if="$q.screen.gt.sm"
         />
 
-        <q-btn-toggle
+        <q-tabs
           v-if="$q.screen.gt.sm"
-          v-model="atualPage"
-          flat
+          indicator-color="transparent"
+          active-color="primary"
+          class="text-weight-bold text-black"
+          shrink
           stretch
-          toggle-color="primary"
-          text-color="black"
-          class="text-weight-bold"
-          no-caps
-          :options="toolbarOptions"
-        />
+        >
+          <q-route-tab
+            v-for="(option, index) in toolbarOptions"
+            :key="index"
+            :label="option.label"
+            no-caps
+            :to="`/${option.value}`"
+          />
+        </q-tabs>
       </q-toolbar>
     </q-header>
 
@@ -100,18 +105,17 @@
       class="bg-transparent"
     >
       <q-tabs
-        v-model="atualPage"
         indicator-color="transparent"
         active-color="white"
         class="bg-primary text-grey-5 tab-footer-radius"
       >
-        <q-tab
+        <q-route-tab
           v-for="(option, index) in toolbarOptions"
           :key="index"
-          :name="option.value"
           :icon="tabBarIcons[index]"
           :label="option.label"
           no-caps
+          :to="`/${option.value}`"
         />
       </q-tabs>
     </q-footer>
@@ -124,7 +128,6 @@ export default {
 
   data() {
     return {
-      atualPage: '',
       leftDrawerOpen: true,
       toolbarOptions: [
         {
@@ -169,20 +172,6 @@ export default {
         },
       ],
     };
-  },
-
-  watch: {
-    atualPage(newValue) {
-      this.$router.push(`/${newValue}`, () => {});
-    },
-
-    '$route.path': {
-      handler(newValue) {
-        this.atualPage = newValue.replace('/', '');
-      },
-
-      immediate: true,
-    },
   },
 };
 </script>
