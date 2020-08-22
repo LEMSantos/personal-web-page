@@ -1,5 +1,8 @@
 import axios from 'axios';
 
-const getBlogPosts = (page) => axios.get(`http://localhost:5000/posts?p=${page}`);
+const getBlogPosts = (page) => {
+  const apiUrl = process.env.API_URL.replace(/"/g, '');
+  return axios.get(`${apiUrl}/posts?p=${page}`);
+};
 
 export default getBlogPosts;
