@@ -1,7 +1,7 @@
 <template>
   <q-page>
     <div
-      class="row shadow-7 q-pa-md-xl q-pa-md"
+      class="row shadow-7 q-pa-md-xl q-pa-md resume q-mt-md-none q-mt-md"
     >
       <div class="col q-pa-sm-md q-pa-sm column justify-center">
         <div
@@ -78,8 +78,8 @@
 
         <div>
           <div class="row q-mb-md justify-between">
-            <div class="col-auto text-weight-bold text-subtitle1">
-              Desenvolvedor Full Stack / Co-fundador
+            <div class="col-auto text-weight-bold text-h6">
+              Desenvolvedor Front-End / Co-fundador
             </div>
 
             <div
@@ -90,14 +90,19 @@
           </div>
 
           <p>
-            JavaScript/Vue
+            Pela Hectares, trabalho com o desenvolvimento de aplicações mobile voltadas para a área
+            da Agricultura. Dentre as principais tecnologias, estão:
+            <ul>
+              <li>Vue e Quasar</li>
+              <li>JavaScript/Html5/Css3</li>
+            </ul>
           </p>
         </div>
 
         <div>
           <div class="row q-mb-md justify-between">
-            <div class="col-auto text-weight-bold text-subtitle1">
-              Estagiário em Cientista de Dados
+            <div class="col-auto text-weight-bold text-h6">
+              Estagiário em Ciência de Dados
             </div>
 
             <div
@@ -108,11 +113,42 @@
           </div>
 
           <p class="text-justify">
+            Internamente migrei para a área de Ciencia de Dados e Business Intelligence onde
+            trabalho com Algoritmos de Machine Learning e Processamento de Linguagem Natural
+            aplicados a dados relacionados à Atenção Básica. Dentre as principais tecnologias,
+            estão:
+            <ul>
+              <li>Flask (Deploy em Produção)</li>
+              <li>ArangoDB</li>
+              <li>Pandas</li>
+              <li>Chatterbot</li>
+              <li>BERT</li>
+            </ul>
+          </p>
+        </div>
+
+        <div>
+          <div class="row q-mb-md justify-between">
+            <div class="col-auto text-weight-bold text-h6">
+              Estagiário em Desenvolvimento de Software
+            </div>
+
+            <div
+              class="col-auto column justify-center text-caption text-grey-8"
+            >
+              Sysvale | 2019 - 2019
+            </div>
+          </div>
+
+          <p class="text-justify">
             Inicialmente atuei como Desenvolvedor Full Stack, trabalhando principalmente com
-            tecnologias como PHP e Laravel, Vue.js e BootstrapVue. Após alguns meses migrei para a
-            área de Ciencia de Dados e Business Intelligence onde trabalho com Algoritmos de Machine
-            Learning e Processamento de Linguagem Natural aplicados a dados relacionas a Atenção
-            Básica.
+            tecnologias como:
+            <ul>
+              <li>PHP/Laravel</li>
+              <li>MongoDB</li>
+              <li>JavaScript/Vue.js</li>
+              <li>Html5/Css3</li>
+            </ul>
           </p>
         </div>
 
@@ -124,7 +160,7 @@
 
         <div>
           <div class="row q-mb-md justify-between">
-            <div class="col-auto text-weight-bold text-subtitle1">
+            <div class="col-auto text-weight-bold text-h6">
               Monitor de Algoritmos e Programação
             </div>
 
@@ -161,9 +197,9 @@
             Técnicas
           </div>
 
-          <p>JavaScript/Vue</p>
-
           <p>Python/Flask/Machine Learning</p>
+
+          <p>JavaScript/Vue</p>
 
           <p>SQL/PostgreSQL/MySQL</p>
 
