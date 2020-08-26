@@ -56,9 +56,11 @@
           type="a"
           target="_blank"
           :href="socialMedia.link"
+          rel="noopener"
           color="primary"
           outline
           round
+          :aria-label="socialMedia.name"
         >
           <q-icon
             :name="socialMedia.icon"
@@ -77,7 +79,7 @@
       <div class="flex flex-center q-my-xl">
         <span
           v-if="$q.screen.lt.md"
-          class="text-black op-50"
+          class="text-black op-90"
         >
           Made with ❤️ by Lucas Eliaquim
         </span>
@@ -93,7 +95,7 @@
       >
         <q-toolbar-title
           shrink
-          class="q-my-md text-body2 text-weight-bold op-50"
+          class="q-my-md text-body2 text-weight-bold"
         >
           Made with ❤️ by Lucas Eliaquim
         </q-toolbar-title>
@@ -105,9 +107,10 @@
       class="bg-transparent"
     >
       <q-tabs
-        indicator-color="transparent"
-        active-color="white"
-        class="bg-primary text-grey-5 tab-footer-radius"
+        switch-indicator
+        dense
+        indicator-color="white"
+        class="bg-primary text-white tab-footer-radius shadow-2 footer-border"
       >
         <q-route-tab
           v-for="(option, index) in toolbarOptions"
@@ -155,18 +158,22 @@ export default {
       ],
       socialMedias: [
         {
+          name: 'link do github',
           icon: 'fab fa-github-alt',
           link: 'https://github.com/LEMSantos',
         },
         {
+          name: 'link do linkedin',
           icon: 'fab fa-linkedin-in',
           link: 'https://www.linkedin.com/in/lucas-eliaquim-1a7675181/',
         },
         {
+          name: 'link do twitter',
           icon: 'fab fa-twitter',
           link: 'https://twitter.com/LEliaquim',
         },
         {
+          name: 'link do email',
           icon: 'fas fa-envelope',
           link: 'mailto:lucas_m-santos@hotmail.com',
         },
@@ -211,5 +218,9 @@ $pageMargin: 70px;
 
 .bg-main-page {
   background-color: #f6f8fa;
+}
+
+.footer-border {
+  border: 2px solid $primary;
 }
 </style>
