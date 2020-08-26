@@ -52,6 +52,7 @@
             <img
               src="~assets/resume-profile.jpg"
               class="object-fit-cover"
+              alt="foto do currículo"
             >
           </q-avatar>
         </div>
@@ -243,9 +244,9 @@
         </div>
 
         <div>
-          <p>Português <span class="op-50">(Nativo)</span></p>
+          <p>Português <span class="op-80">(Nativo)</span></p>
 
-          <p>Inglês <span class="op-50">(Intermediário)</span></p>
+          <p>Inglês <span class="op-80">(Intermediário)</span></p>
         </div>
       </div>
 
@@ -298,6 +299,7 @@
           type="a"
           :href="social.link"
           target="_blank"
+          :aria-label="social.name"
           dense
           unelevated
         />
@@ -312,16 +314,19 @@ export default {
     return {
       socialMedias: [
         {
+          name: 'link do github',
           icon: 'fab fa-github-alt',
           text: 'github.com/LEMSantos',
           link: 'https://github.com/LEMSantos',
         },
         {
+          name: 'link do linkedin',
           icon: 'fab fa-linkedin-in',
           text: 'linkedin.com/in/lucas-eliaquim-1a7675181',
           link: 'https://www.linkedin.com/in/lucas-eliaquim-1a7675181/',
         },
         {
+          name: 'link do twitter',
           icon: 'fab fa-twitter',
           text: '@LEliaquim',
           link: 'https://twitter.com/LEliaquim',
