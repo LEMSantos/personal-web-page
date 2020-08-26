@@ -30,6 +30,7 @@
             src="~assets/home-image.png"
             spinner-color="white"
             class="home-image-size"
+            alt="ainda não há nenhum post"
           />
         </div>
 
@@ -89,6 +90,8 @@
             type="a"
             target="_blank"
             :href="socialMedia.link"
+            :aria-label="socialMedia.name"
+            rel="noopener"
             color="primary"
             class="q-mr-md"
             outline
@@ -209,6 +212,18 @@
       </div>
 
       <div
+        v-if="errorFetchLatestBlogPosts"
+        class="q-mt-md"
+      >
+        <q-banner
+          inline-actions
+          class="text-white bg-negative rounded-borders"
+        >
+          Houve um erro ao recuperar os últimos posts do blog.
+        </q-banner>
+      </div>
+
+      <div
         v-else-if="!latestBlogPosts.length"
         class="column items-center q-gutter-y-md q-pt-xl"
       >
@@ -276,16 +291,20 @@ export default {
     return {
       /* eslint-disable global-require */
       latestBlogPosts: [],
+      errorFetchLatestBlogPosts: false,
       socialMedias: [
         {
+          name: 'link do github',
           icon: 'fab fa-github-alt',
           link: 'https://github.com/LEMSantos',
         },
         {
+          name: 'link do linkedin',
           icon: 'fab fa-linkedin-in',
           link: 'https://www.linkedin.com/in/lucas-eliaquim-1a7675181/',
         },
         {
+          name: 'link do email',
           icon: 'fas fa-envelope',
           link: 'mailto:lucas_m-santos@hotmail.com',
         },
@@ -301,7 +320,9 @@ export default {
       .then(({ data }) => {
         this.latestBlogPosts = data;
       })
-      .catch(() => {})
+      .catch(() => {
+        this.errorFetchLatestBlogPosts = true;
+      })
       .finally(() => {
         this.loadingBlogPosts = false;
       });
