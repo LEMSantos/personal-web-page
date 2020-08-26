@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page class="column">
     <div
       v-if="loadingBlogPosts"
       class="relative-position flex flex-center q-py-xl"
@@ -9,6 +9,18 @@
         size="50px"
         class="q-my-xl"
       />
+    </div>
+
+    <div
+      v-else-if="errorFetchBlogPosts"
+      class="q-mt-md col-grow flex flex-center"
+    >
+      <q-banner
+        inline-actions
+        class="text-white bg-negative rounded-borders"
+      >
+        Houve um erro ao recuperar os últimos posts do blog.
+      </q-banner>
     </div>
 
     <div
@@ -68,6 +80,7 @@ export default {
     return {
       blogPosts: [],
       loadingBlogPosts: false,
+      errorFetchBlogPosts: false,
       page: 1,
       lastPage: 1,
     };
@@ -80,6 +93,9 @@ export default {
       .then(({ data: response }) => {
         this.blogPosts = response.data;
         this.lastPage = response.last_page;
+      })
+      .catch(() => {
+        this.errorFetchBlogPosts = true;
       })
       .finally(() => {
         this.loadingBlogPosts = false;
