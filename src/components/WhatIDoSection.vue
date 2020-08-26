@@ -9,6 +9,7 @@
         :key="index"
         :name="icon.name"
         size="30px"
+        class="icon-height"
         :class="index < icons.length - 1 ? 'q-mr-md' : ''"
         :style="icon.color ? `color: ${icon.color}` : ''"
       />
@@ -40,4 +41,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.icon-height {
+  height: 30px;
+  width: auto;
+  min-width: 30px;
+}
 </style>
