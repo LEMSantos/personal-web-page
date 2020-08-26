@@ -44,7 +44,7 @@
       v-model="leftDrawerOpen"
       show-if-above
       :width="182"
-      class="bg-main-page"
+      content-style="background-color: #f6f8fa"
       content-class="bg-main-page"
     >
       <div
@@ -217,10 +217,14 @@ $pageMargin: 70px;
 }
 
 .bg-main-page {
-  background-color: #f6f8fa;
+  background-color: #f6f8fa !important;
 }
 
 .footer-border {
   border: 2px solid $primary;
+}
+
+div .q-drawer__content {
+  background-color: #f6f8fa !important;
 }
 </style>
