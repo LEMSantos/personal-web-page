@@ -50,7 +50,7 @@
             class="q-mr-sm-xl q-mb-lg"
           >
             <img
-              src="~assets/resume-profile.jpg"
+              src="~assets/resume-profile.webp"
               class="object-fit-cover"
               alt="foto do currículo"
             >

@@ -27,7 +27,7 @@
         <div class="flex flex-center">
           <q-img
             v-if="!$q.screen.gt.sm"
-            src="~assets/home-image.png"
+            src="~assets/home-image.webp"
             spinner-color="white"
             class="home-image-size"
             alt="ainda não há nenhum post"
@@ -110,7 +110,7 @@
         class="col-auto"
       >
         <q-img
-          src="~assets/home-image.png"
+          src="~assets/home-image.webp"
           spinner-color="white"
           class="home-image-size"
         />
@@ -132,7 +132,7 @@
               color: '#456E9C',
             },
             {
-              name: `img:${require('src/assets/flask-icon.png')}`,
+              name: `img:${require('src/assets/flask-icon.webp')}`,
               color: '#64B687',
             },
           ]"
@@ -184,7 +184,7 @@
               color: '#64B687',
             },
             {
-              name: `img:${require('src/assets/quasar-logo.png')}`,
+              name: `img:${require('src/assets/quasar-logo.webp')}`,
               color: '#64B687',
             },
           ]"
@@ -228,7 +228,7 @@
         class="column items-center q-gutter-y-md q-pt-xl"
       >
         <q-icon
-          :name="`img:${require('src/assets/octocat.png')}`"
+          :name="`img:${require('src/assets/octocat.webp')}`"
           size="250px"
         />
 

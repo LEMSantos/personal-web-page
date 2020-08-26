@@ -19,7 +19,7 @@
         inline-actions
         class="text-white bg-negative rounded-borders"
       >
-        Houve um erro ao recuperar os últimos posts do blog.
+        Houve um erro ao recuperar os posts do blog.
       </q-banner>
     </div>
 
@@ -28,7 +28,7 @@
       class="column items-center q-gutter-y-md q-pt-xl"
     >
       <q-icon
-        :name="`img:${require('src/assets/octocat.png')}`"
+        :name="`img:${require('src/assets/octocat.webp')}`"
         size="300px"
       />
 
