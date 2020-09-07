@@ -138,8 +138,9 @@
           ]"
           class="col-md-3 col-sm-6 col-xs-12"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua.
+          Utilizando Python, construo aplicações relacionadas à inteligência artificial, em áreas
+          como, Machine Learning, Processamento de Linguagem Natural e Business Intelligence, com
+          pipelines que vão desde os estudos iniciais até o deploy utilizando Flask.
         </what-i-do-section>
         <what-i-do-section
           title="JavaScript, Html & Css"
@@ -159,9 +160,8 @@
           ]"
           class="col-md-3 col-sm-6 col-xs-12"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Com a stack básica do desenvolvimento web, posso construir aplicações simples, porém
+          robustas e leves para oferecer uma melhor experiência para o usuário final.
         </what-i-do-section>
         <what-i-do-section
           title="Docker"
@@ -173,8 +173,9 @@
           ]"
           class="col-md-3 col-sm-6 col-xs-12"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua.
+          Com o Docker, construo ambientes personalizados para desenvolvimento e deploy em produção,
+          além de trabalhar com CI no Gitlab, e o uso de containers para facilitar atividades
+          rotineiras e que podem ser automatizadas.
         </what-i-do-section>
         <what-i-do-section
           title="Vue & Quasar"
@@ -190,8 +191,10 @@
           ]"
           class="col-md-3 col-sm-6 col-xs-12"
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua.
+          Com Vue e Quasar, construo aplicações escaláveis e de fácil manutenção, que podem variar
+          entre os tipos: SPA, SSR, PWA, Aplicações Mobile, Aplicações de Desktop e Extensões de
+          Browser. Além disso, posso desenvolver apenas com o Vue sem o uso de frameworks, como
+          também, junto com a maioria dos frameworks disponíveis no mercado.
         </what-i-do-section>
       </div>
     </page-section>
@@ -212,7 +215,7 @@
       </div>
 
       <div
-        v-if="errorFetchLatestBlogPosts"
+        v-else-if="errorFetchLatestBlogPosts"
         class="q-mt-md"
       >
         <q-banner
